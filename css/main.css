@@ -1,0 +1,259 @@
+@font-face {
+  font-family: "Rodus";
+  src: url("//css/fonts/rodus/rodusreg500-webfont.eot");
+  src: url("/css/fonts/rodus/rodusreg500-webfont.woff") format("woff"),
+       url("/css/fonts/rodus/RODUSreg500.otf") format("opentype"),
+       url("/css/fonts/rodus/rodusreg500-webfont.svg#rodus") format("svg");
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+	position: fixed;
+	width: 70px;
+	height: 100%;
+	background: #000;
+  color: white;
+}
+
+.spacer {
+  margin: 0px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Safari, Opera */
+.sidebar-content::-webkit-scrollbar {
+  display: none;
+}
+
+.header_main {
+  padding-left: 10px;
+  padding-top: 5px;
+  margin: 0px;
+  font-family: "Rodus", Arial;
+  font-weight: bolder;
+  font-style: normal;
+  display: none;
+}
+
+.subheader_main {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  font-family: "Rodus", Arial;
+  font-style: oblique;
+  display: none;
+}
+
+.links > hr {
+  margin: 0px;
+}
+
+.section {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: #ededed;
+  color: black
+}
+
+.section:hover {
+  background: black;
+  transition: 0.3s;
+  color: white;
+}
+
+.section:hover > img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.links > a {
+  text-decoration: none;
+  font-family: "Rodus", Arial;
+}
+
+#about_text, #edu_text, #skills_text, #exp_text, #port_text {
+  display: none;
+}
+
+#about_img, #edu_img, #skills_img, #exp_img, #port_img {
+  display: block;
+}
+
+.footer {
+  bottom: 10px;
+  position: static;
+  width: 100%;
+  margin-top: auto;
+  display: none;
+}
+
+.license {
+  color: white;
+  text-decoration: none;
+}
+
+.content {
+  width: auto;
+	margin-left: 70px;
+	position: relative;
+	background: white;
+	overflow: auto;
+	z-index: 1;
+  /* border-style: solid;
+  border-color: red; */
+}
+
+.topbar {
+  position: fixed;
+  height: 30px;
+  width: calc(100% - 70px);
+  padding: 0;
+  margin: 0;
+  background: black;
+  align-items: center;
+  justify-content: center;
+  /* border-style: solid;
+  border-color: red; */
+  transition: top 0.3s;
+}
+
+.topbar.vertTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-top: -50% !important;
+}
+
+.menu_button {
+  display: none;
+  margin-right: auto;
+  position: absolute;
+  float: right;
+  left: 10px;
+}
+
+.menu_icon {
+  height: 20px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.topbar_title {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  /* border-color:red;
+  border-style: solid; */
+}
+
+.topbar_header {
+  color: white;
+  font-family: "Rodus", Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  right: 20px;
+}
+
+.topbar_subheader {
+  color: white;
+  font-family: "Rodus", Arial, sans-serif;
+  align-self:baseline;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  left: 20px;
+}
+
+.spacer {
+  margin-top: 30px;
+}
+
+/* from 1200px and up */
+@media (min-width:1200px) {
+	.sidebar {
+	  width: 250px;
+	}
+  .header_main {
+    display: block;
+  }
+  .subheader_main {
+    display: block;
+  }
+	.content {
+	  margin-left: 250px;
+	}
+  .topbar {
+    display: none;
+  }
+  .menu_button {
+    display: none;
+  }
+  .spacer {
+    margin: 0px;
+  }
+  #about_text, #edu_text, #skills_text, #exp_text, #port_text {
+    display: block;
+  }
+  #about_img, #edu_img, #skills_img, #exp_img, #port_img {
+    display: none;
+  }
+  .footer {
+    display: block;
+  }
+}
+
+/* from 0px to 450px */
+@media (max-width:450px) {
+  .sidebar {
+    margin-top: 30px;
+    width: 0px;
+    transition: 0.5s;
+    z-index: 2;
+  }
+  .content {
+    margin-left: 0px;
+  }
+  .topbar {
+    display: flex;
+    width: 100%;
+  }
+  .menu_button {
+    display: flex;
+  }
+  .section > a:hover {
+    color: inherit;
+  }
+  /* .footer {
+    display: block;
+    margin-bottom: 15px;
+  } */
+  #about_text, #edu_text, #skills_text, #exp_text, #port_text {
+    display: block;
+  }
+  #about_img, #edu_img, #skills_img, #exp_img, #port_img {
+    display: none;
+  }
+}
