@@ -10,14 +10,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             /* body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             } */
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <!-- <script src="/scripts/topbar_fadeout.js"></script> -->
@@ -55,7 +53,7 @@
             <hr>
             <a id="exp_link" href="#experience">
               <div class="section">
-                <p id="exp_text">Experience</p>
+                <p id="exp_text">Work History</p>
                 <img id="exp_img" src="/images/icons/sidebar/experience.svg" height="40px">
               </div>
             </a>
@@ -70,8 +68,8 @@
           <div class="footer">
             <hr>
             <footer>
-              <p>Copyright &copy; 2021</p>
-              <p>Website designed by Chris Boado</p>
+              <p>Copyright &copy; 2021 Chris Boado</p>
+              <p>Website designed and created by Chris Boado</p>
               <p>Icons made by <a class="license" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a class="license" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
             </footer>
           </div>
@@ -80,32 +78,196 @@
       <div class="content">
         <div id="topbar_ele" class="topbar">
           <a class="menu_button" onClick="setSidebar()">
-            <img class="menu_icon" src="/images/icons/menu.png">
+            <img class="menu_icon" src="/images/icons/menu.svg">
           </a>
           <div class="topbar_title">
             <h5 class="topbar_header">CHRIS BOADO</h5>
             <h6 class="topbar_subheader">Resume & Portfolio</h6>
           </div>
         </div>
-        <div class="spacer">
-          <div id="about_me" class="about_me_page">
-            About Me
+        <div id="spacer">
+          <div id="about_me" class="content_page">
+            <h1>ABOUT ME</h1>
+            <p>I am a recent <b>Computer Engineering</b> graduate seeking a software development role where I can apply my skills to contribute to a growth-oriented company. Interests include embedded software, systems software, and web development.</p>
+            <div id="contacts_wrapper">
+              <div id="about_me_links">
+                <a id="linkedin_link" href="https://www.linkedin.com/in/boadoct">
+                  <img id="linkedin_icon" src="/images/icons/linkedin.svg">
+                </a>
+                <a id="github_link" href="https://github.com/hanipman">
+                  <img id="github_icon" src="/images/icons/github.svg">
+                </a>
+              </div>
+              <div class="contact_box">
+                <img id="location_icon" src="/images/icons/placeholder.svg">
+                <br>
+                4750 Pomponio Place
+                <br>
+                Annandale, Virginia
+              </div>
+              <div class="contact_box">
+                <img id="email_icon" src="/images/icons/arroba.svg">
+                <br>
+                boadoct@vt.edu
+                <br>
+                boadoct@outlook.com
+              </div>
+              <div id="download_cv">
+                <a id="download_link" href="/assets/Chris_Boado_Resume_default.pdf" download>
+                  <img id="download_icon" src="/images/icons/down-arrow.svg">
+                  <i>Download Resume</i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div id="education" class="edu_page">
-            Education
+          <div id="education" class="content_page">
+            <h1>Education & Certifications</h1>
+            <div class="edu_block">
+              B.S. in Computer Engineering, 2020
+              <br>
+              Virginia Polytechnic Institute and State University (VT) Blacksburg, Virginia
+              <button class="cert_button" onClick="openModal('courses_modal')">COURSE LIST ></button>
+              <div id="courses_modal" class="modal">
+                <div class="modal_content">
+                  <!-- <span class="close" onClick="closeModal('courses_modal')">&times;</span> -->
+                  <div>
+                    Embedded Software:
+                    <ul style="margin:10px;text-align:left;">
+                      <li>Embedded System Design</li>
+                      <li>Real-Time Systems</li>
+                      <li>Digital Design I & II</li>
+                      <li>Microcontroller Interfacing</li>
+                      <li>Network Application Design</li>
+                    </ul>
+                    Application Software:
+                    <ul style="margin:10px;text-align:left">
+                      <li>Applied Software Design</li>
+                      <li>Computer and Network Security Fundamentals</li>
+                      <li>Machine Learning</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edu_block">
+              <span>
+                Full Stack Development, 2021
+                <br>
+                <a text-decoration="none" href="https://fullstackopen.com/en/">Full Stack Open</a>, University of Helsinki
+              </span>
+              <button class="cert_button" onClick="openModal('full_stack_modal')">CERTIFICATE ></button>
+              <div id="full_stack_modal" class="modal">
+                <div class="modal_content">
+                  <!-- <span class="close" onClick="closeModal('full_stack_modal')">&times;</span> -->
+                  <img src="/images/certificates/certificate-fullstack.png" width="80%">
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="skills" class="skills_page">
-            Skills
+          <div id="skills" class="content_page">
+            <h1>Technical Skill</h1>
+            <div class="skill_block">
+              <h3>Embedded Software</h3>
+              <span>C, FreeRTOS</span>
+            </div>
+            <div class="skill_block">
+              <h3>Application Software</h3>
+              <span>C++, Java, Python, Qt, Catch</span>
+            </div>
+            <div class="skill_block">
+              <h3>Web Development</h3>
+              <span>MongoDB, NodeJS, Javascript, Typescript, Express, Jest, React, Redux, GraphQL</span>
+            </div>
+            <div class="skill_block">
+              <h3>Collaborative</h3>
+              <span>Git</span>
+            </div>
           </div>
-          <div id="experience" class="exp_page">
-            Experience
+          <div id="experience" class="content_page">
+            <h1>Work History</h1>
+            <div class="exp_block_1">
+              <h3>August 2019 - March 2020</h3>
+              <h3>October 2018 - December 2018</h3>
+              <i>Part Time Student Staff</i>
+              <br>
+              Virginia Tech Dining Services
+              <br>
+              (Au Bon Pain, Southgate Bakery)
+              <br>
+              Blacksburg, Virginia
+            </div>
+            <div class="exp_block_2">
+              <h3>August 2019 - December 2019</h3>
+              <i>Production Tech I</i>
+              <br>
+              Virginia Tech Production Services
+              <br>
+              Blacksburg, Virginia
+            </div>
+            <div class="exp_block_1">
+              <h3>July 2013 - August 2013</h3>
+              <i>Part Time Sales Advisor</i>
+              <br>
+              H&M Hennes & Mauritz
+              <br>
+              Fair Oaks, Virginia
+            </div>
           </div>
-          <div id="portfolio" class="port_page">
-            Portfolio
+          <div id="portfolio" class="content_page">
+            <h1>Portfolio</h1>
+            <div id="rover_block" class="port_block" onClick="openModal('rover-modal')">
+              <div id="rover-modal" class="modal">
+                <div class="modal_content">
+                  <div>
+                    Gallery
+                  </div>
+                  Project rover pair consisting of a leader and follower. The follower rover is responsible for following and catching objects obtained by the leader rover.
+                  <br>
+                  <a href="https://github.com/hjanipman/Rover-Follower-Pair">More Details ></a>
+                </div>
+              </div>
+            </div>
+            <div id="vtcalc_block" class="port_block" onClick="openModal('vtcalc_modal')">
+              <div id="vtcalc_modal" class="modal">
+                <div class="modal_content">
+                  <div>
+                    Gallery
+                  </div>
+                  Calculator program that that interprets algorithmic expressions in postfix format. The GUI is created using Qt and built using CMAKE.
+                  <br>
+                  <a href="https://github.com/hanipman/VTMath-Calculator">More Details ></a>
+                </div>
+              </div>
+            </div>
+            <div id="wowDB_block" class="port_block" onClick="openModal('wowDB_modal')">
+              <div id="wowDB_modal" class="modal">
+                <div class="modal_content">
+                  <div>
+                    Gallery
+                  </div>
+                  Periodic python script that queries the World of Warcraft Auction House Database for present price data. The data is temporarily stored on a Postgres database where built in statistics functions can be used to track the price history of various items.
+                  <br>
+                  <a href="https://github.com/hanipman/wowDB">More Details ></a>
+                </div>
+              </div>
+            </div>
+            <div id="bgame_block" class="port_block" onClick="openModal('bgame_modal')">
+              <div id="bgame_modal" class="modal">
+                <div class="modal_content">
+                  <div>
+                    Gallery
+                  </div>
+                  Simple board game hosted on a Raspberry Pi server. The server and client uses RabbitMQ to communicate. The typical pattern is the server sends the state of the board and a status and the client responds with the next move.
+                  <br>
+                  <a href="https://github.com/hanipman/net_apps_final">More Details ></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <script src="/scripts/topbar_fadeout.js"></script>
+      <!-- <script src="/scripts/topbar_fadeout.js"></script> -->
       <script src="/scripts/sidebar_slidein.js"></script>
+      <script src="/scripts/image_modal.js"></script>
     </body>
 </html>

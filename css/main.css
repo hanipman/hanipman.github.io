@@ -5,6 +5,10 @@
        url("/css/fonts/rodus/RODUSreg500.otf") format("opentype"),
        url("/css/fonts/rodus/rodusreg500-webfont.svg#rodus") format("svg");
 }
+/* ANCHOR Top */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   width: 100%;
@@ -13,55 +17,48 @@ body {
   padding: 0;
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-	position: fixed;
-	width: 70px;
-	height: 100%;
-	background: #000;
-  color: white;
-}
-
-.spacer {
-  margin: 0px;
-}
-
-.sidebar-content {
-  display: flex;
-  flex-direction: column;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+  background-color: rgb(0,0,0,0.4);
 }
 
-/* Chrome, Safari, Opera */
-.sidebar-content::-webkit-scrollbar {
-  display: none;
+.modal_content {
+  max-width: 80%;
+  background-color: #ededed;
+  border: 1px solid #888;
 }
 
-.header_main {
-  padding-left: 10px;
-  padding-top: 5px;
-  margin: 0px;
-  font-family: "Rodus", Arial;
-  font-weight: bolder;
-  font-style: normal;
-  display: none;
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaaaaa;
 }
 
-.subheader_main {
-  padding-left: 10px;
-  padding-bottom: 5px;
-  margin-top: 0px;
-  font-family: "Rodus", Arial;
-  font-style: oblique;
-  display: none;
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .links > hr {
   margin: 0px;
+}
+
+.links > a {
+  text-decoration: none;
+  font-family: "Rodus", Arial;
 }
 
 .section {
@@ -86,25 +83,8 @@ body {
   filter: invert(1);
 }
 
-.links > a {
-  text-decoration: none;
-  font-family: "Rodus", Arial;
-}
-
-#about_text, #edu_text, #skills_text, #exp_text, #port_text {
-  display: none;
-}
-
-#about_img, #edu_img, #skills_img, #exp_img, #port_img {
-  display: block;
-}
-
 .footer {
-  bottom: 10px;
-  position: static;
-  width: 100%;
-  margin-top: auto;
-  display: none;
+  font-family: Calibri;
 }
 
 .license {
@@ -113,106 +93,138 @@ body {
 }
 
 .content {
-  width: auto;
-	margin-left: 70px;
-	position: relative;
-	background: white;
-	overflow: auto;
-	z-index: 1;
-  /* border-style: solid;
-  border-color: red; */
+  font-family: Calibri;
 }
 
-.topbar {
-  position: fixed;
+#about_me {
+  background-color: #ededed;
+}
+
+#about_me > h1 {
+  font-size: 50px;
+}
+
+#about_me > p {
+  font-size: 30px;
+}
+
+#contacts_wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+#linkedin_icon {
+  height: 40px;
+  margin: 10px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 60px;
+  border-color: black;
+}
+
+#github_icon {
+  height: 40px;
+  margin: 10px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 60px;
+  border-color: black;
+}
+
+#location_icon {
+  position: relative;
   height: 30px;
-  width: calc(100% - 70px);
-  padding: 0;
-  margin: 0;
-  background: black;
-  align-items: center;
-  justify-content: center;
-  /* border-style: solid;
-  border-color: red; */
-  transition: top 0.3s;
-}
-
-.topbar.vertTranslate {
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-  transition: 3s;
-  margin-top: -50% !important;
-}
-
-.menu_button {
-  display: none;
-  margin-right: auto;
-  position: absolute;
-  float: right;
-  left: 10px;
-}
-
-.menu_icon {
-  height: 20px;
+  background-color:white;
+  border-style: solid;
+  border-radius: 60px;
+  border-color: white;
   -webkit-filter: invert(1);
   filter: invert(1);
 }
 
-.topbar_title {
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  /* border-color:red;
-  border-style: solid; */
+#email_icon {
+  height: 30px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 60px;
+  border-color: black;
 }
 
-.topbar_header {
-  color: white;
-  font-family: "Rodus", Arial, sans-serif;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  right: 20px;
+#download_icon {
+  height: 10px;
 }
 
-.topbar_subheader {
-  color: white;
-  font-family: "Rodus", Arial, sans-serif;
-  align-self:baseline;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  left: 20px;
+#download_link {
+  color: black;
+  text-decoration: none;
 }
 
-.spacer {
-  margin-top: 30px;
+#education {
+  background-color: white;
 }
 
-/* from 1200px and up */
-@media (min-width:1200px) {
-	.sidebar {
-	  width: 250px;
-	}
+#skills {
+  background-color: #ededed;
+}
+
+#experience {
+  background-color: white;
+}
+
+#portfolio {
+  background-color: #ededed;
+}
+
+#rover_block {
+  background-image: url('/images/portfolio/rover_follower_pair/still.png');
+}
+
+#vtcalc_block {
+  background-image: url('/images/portfolio/vtcalc/still.png');
+}
+
+#wowDB_block {
+  /* background-image: url('/images/portfolio/wowDB/still.png'); */
+  background-image: url('/images/icons/github.svg');
+}
+
+#bgame_block {
+  /* background-image: url('/images/portfolio/simple_board_game/still.png'); */
+  background-image: url('/images/icons/github.svg');
+}
+
+/* NOTE smaller mobile devices 0px to 425px */
+@media only screen and (max-width: 425px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 30px;
+    width: 0px;
+    height: 100%;
+    background: black;
+    color: white;
+    transition: 0.5s;
+    z-index: 2;
+  }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Chrome, Safari, Opera */
+  .sidebar-content::-webkit-scrollbar {
+    display: none;
+  }
   .header_main {
-    display: block;
+    display: none;
   }
   .subheader_main {
-    display: block;
-  }
-	.content {
-	  margin-left: 250px;
-	}
-  .topbar {
     display: none;
-  }
-  .menu_button {
-    display: none;
-  }
-  .spacer {
-    margin: 0px;
   }
   #about_text, #edu_text, #skills_text, #exp_text, #port_text {
     display: block;
@@ -222,38 +234,524 @@ body {
   }
   .footer {
     display: block;
-  }
-}
-
-/* from 0px to 450px */
-@media (max-width:450px) {
-  .sidebar {
-    margin-top: 30px;
-    width: 0px;
-    transition: 0.5s;
-    z-index: 2;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 17px;
+    bottom: 0px;
+    font-size: small
   }
   .content {
+    width: auto;
     margin-left: 0px;
+    position: relative;
+    background: black;
+    overflow: auto;
+    z-index: 1;
   }
   .topbar {
     display: flex;
+    position: fixed;
+    height: 30px;
     width: 100%;
+    padding: 0;
+    margin: 0;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s;
+    z-index: 4;
   }
   .menu_button {
     display: flex;
+    position: absolute;
+    margin-right: auto;
+    float: right;
+    left: 10px;
   }
-  .section > a:hover {
-    color: inherit;
+  .menu_icon {
+    height: 20px;
+    -webkit-filter: invert(1);
+    filter: invert(1);
   }
-  /* .footer {
+  .topbar_title {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  .topbar_header {
+    color: white;
+    font-family: "Rodus", Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    right: 20px;
+  }
+  .topbar_subheader {
+    color: white;
+    font-family: "Rodus", Arial, sans-serif;
+    align-self:baseline;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    left: 20px;
+  }
+  #spacer {
+    margin-top: 30px;
+  }
+  .content_page {
+    padding: 30px 10px 30px 10px;
+    scroll-margin-top: 30px;
+  }
+  #contacts_wrapper {
+    display: inherit;
+  }
+  #about_me_links {
+    text-align: center;
+  }
+  .contact_box {
+    width: fit-content;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+  }
+  #download_cv {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+  .edu_block {
+    position: relative;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  .cert_button {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    border: none;
+    background-color: white;
+  }
+  .skill_block {
+    position: relative;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    background-color: white;
+  }
+  .exp_block_1 {
+    position: relative;
+    /* margin: 20px; */
+    padding: 20px 10px 20px 10px;
+    background-color: #ededed;
+    border-style: solid;
+    border-left: none;
+  }
+  .exp_block_2 {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    text-align: right;
+    background-color: #ededed;
+    border-style: solid;
+    border-right: none;
+  }
+  .port_block {
+    /* position: relative; */
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    background-color: #ededed;
+    background-size: cover;
+    background-position: center;
+  }
+  .port_block > img {
+    object-fit: cover;
+  }
+}
+
+/* NOTE smaller laptop and tablet devices 426px to 1199px */
+@media only screen and (min-width: 426px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin: 0px;
+    width: 70px !important;
+    height: 100%;
+    background: #000;
+    color: white;
+  }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Chrome, Safari, Opera */
+  .sidebar-content::-webkit-scrollbar {
+    display: none;
+  }
+  .header_main {
+    padding-left: 10px;
+    padding-top: 5px;
+    margin: 0px;
+    font-family: "Rodus", Arial;
+    font-weight: bolder;
+    font-style: normal;
+    display: none;
+  }
+  .subheader_main {
+    display: none;
+  }
+  #about_text, #edu_text, #skills_text, #exp_text, #port_text {
+    display: none;
+  }
+  #about_img, #edu_img, #skills_img, #exp_img, #port_img {
     display: block;
-    margin-bottom: 15px;
-  } */
+  }
+  .footer {
+    display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 0px;
+    font-size:small
+  }
+  .content {
+    width: auto;
+    margin-left: 70px;
+    position: relative;
+    background: black;
+    overflow: auto;
+    z-index: 1;
+  }
+  .topbar {
+    position: fixed;
+    height: 30px;
+    width: calc(100% - 70px);
+    padding: 0;
+    margin: 0;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s;
+    z-index: 4;
+  }
+  .menu_button {
+    display: none;
+  }
+  .topbar_title {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  .topbar_header {
+    color: white;
+    font-family: "Rodus", Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    right: 20px;
+  }
+  .topbar_subheader {
+    color: white;
+    font-family: "Rodus", Arial, sans-serif;
+    align-self:baseline;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    left: 20px;
+  }
+  #spacer {
+    margin-top: 30px;
+  }
+  .content_page {
+    padding: 30px 20px 30px 20px;
+    scroll-margin-top: 30px;
+  }
+  #about_me_links {
+    margin: auto;
+    align-items: center;
+  }
+  .contact_box { 
+    width: fit-content;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+  }
+  #download_cv {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+  }
+  #education:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .edu_block {
+    display: flex;
+    position: relative;
+    float: left;
+    width: calc((100% - 100px)/2);
+    height: 100px;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  .cert_button {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    border: none;
+    background-color: white;
+  }
+  #skills:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .skill_block {
+    position: relative;
+    float: left;
+    width: calc((100% - 100px)/2);
+    height: 100px;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    background-color: white;
+  }
+  #experience:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .exp_block_1 {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    background-color: #ededed;
+    border-style: solid;
+    border-left: none;
+  }
+  .exp_block_2 {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    text-align: right;
+    background-color: #ededed;
+    border-style: solid;
+    border-right: none;
+  }
+  #portfolio:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .port_block {
+    position: relative;
+    float: left;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    padding: auto;
+    background-color: #ededed;
+    background-size: cover;
+    background-position: center;
+  }
+  .port_block > img {
+    object-fit: cover;
+  }
+}
+
+/* NOTE larger laptop/desktop screens 1200px and up */
+@media only screen and (min-width: 1200px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin: 0px;
+    width: 250px !important;
+    height: 100%;
+    background: #000;
+    color: white;
+  }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Chrome, Safari, Opera */
+  .sidebar-content::-webkit-scrollbar {
+    display: none;
+  }
+  .header_main {
+    display: block;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin: 0px;
+    font-family: "Rodus", Arial;
+    font-weight: bolder;
+    font-style: normal;
+  }
+  .subheader_main {
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    font-family: "Rodus", Arial;
+    font-style: oblique;
+  }
   #about_text, #edu_text, #skills_text, #exp_text, #port_text {
     display: block;
   }
   #about_img, #edu_img, #skills_img, #exp_img, #port_img {
     display: none;
+  }
+  .footer {
+    display: block;
+    bottom: 10px;
+    position: static;
+    width: 100%;
+    margin-top: auto;
+  }
+	.content {
+	  margin-left: 250px;
+	}
+  .content {
+    width: auto;
+    margin-left: 250px;
+    position: relative;
+    background: black;
+    overflow: auto;
+    z-index: 1;
+  }
+  .topbar {
+    display: none;
+  }
+  .menu_button {
+    display: none;
+  }
+  #spacer {
+    margin-top: 0px;
+  }
+  .content_page {
+    padding: 40px 30px 40px 30px;
+    scroll-margin-top: 0px;
+  }
+  #about_me_links {
+    margin: auto;
+    align-items: center;
+  }
+  .contact_box { 
+    width: fit-content;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+  }
+  #download_cv {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+  }
+  #education:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .edu_block {
+    display: flex;
+    position: relative;
+    float: left;
+    width: calc((100% - 100px)/2);
+    height: 100px;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cert_button {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    border: none;
+    background-color: white;
+  }
+  #skills:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .skill_block {
+    position: relative;
+    float: left;
+    width: calc((100% - 100px)/2);
+    height: 100px;
+    margin: 10px;
+    padding: 20px 10px 20px 10px;
+    background-color: white;
+  }
+  #experience:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .exp_block_1 {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    background-color: #ededed;
+    border-style: solid;
+    border-left: none;
+  }
+  .exp_block_2 {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    text-align: right;
+    background-color: #ededed;
+    border-style: solid;
+    border-right: none;
+  }
+  #portfolio:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .port_block {
+    position: relative;
+    float: left;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    padding: auto;
+    background-color: #ededed;
+    background-size: cover;
+    background-position: center;
+  }
+  .port_block > img {
+    object-fit: cover;
   }
 }

@@ -5,10 +5,12 @@ function openSidebar() {
 	document.getElementById('skills_link').onclick = closeSidebar;
 	document.getElementById('exp_link').onclick = closeSidebar;
 	document.getElementById('port_link').onclick = closeSidebar;
+	document.body.style.overflow = "hidden";
 }
 
 function closeSidebar() {
 	document.getElementById('sidebar_ele').style.width = "0%";
+	document.body.style.overflow = "auto";
 }
 
 function setSidebar() {

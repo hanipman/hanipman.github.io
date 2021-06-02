@@ -7,7 +7,6 @@ window.addEventListener('scroll', function() {
 		topbar.style.top = "-30px";
 	}
 	else {
-		console.log("up")
 		topbar.style.top = "0";
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
