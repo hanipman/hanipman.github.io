@@ -26,7 +26,6 @@ body {
   width: 100%;
   height: 100%;
   justify-content: center;
-  justify-items: center;
   align-items: center;
   text-align: center;
   overflow: auto;
@@ -192,6 +191,10 @@ body {
 #bgame_block {
   /* background-image: url('/images/portfolio/simple_board_game/still.png'); */
   background-image: url('/images/icons/github.svg');
+}
+
+#phonebook_block {
+  background-image: url('/images/portfolio/phonebook_backend/still.png')
 }
 
 /* NOTE smaller mobile devices 0px to 425px */
