@@ -151,7 +151,7 @@
             </div>
             <div class="edu_block">
               <span>
-                Full Stack Development, 2021
+                Full Stack Development - React/React Native, 2021
                 <br>
                 <a text-decoration="none" href="https://fullstackopen.com/en/">Full Stack Open</a>, University of Helsinki
               </span>
@@ -159,7 +159,16 @@
               <div id="full_stack_modal" class="modal">
                 <div class="modal_content">
                   <!-- <span class="close" onClick="closeModal('full_stack_modal')">&times;</span> -->
-                  <img src="/images/certificates/certificate-fullstack.png" width="80%">
+                  <div class="slides">
+                    <div class="numberText">1 / 2</div>
+                    <img src="/images/certificates/certificate-fullstack.png" width="80%" height="auto">
+                  </div>
+                  <div class="slides">
+                    <div class="numberText">2 / 2</div>
+                    <img src="/images/certificates/certificate-reactnative.png" width="80%" height="auto">
+                  </div>
+                  <a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onClick="plusSlides(1)">&#10095;</a>
                 </div>
               </div>
             </div>
@@ -281,5 +290,6 @@
       <!-- <script src="/scripts/topbar_fadeout.js"></script> -->
       <script src="/scripts/sidebar_slidein.js"></script>
       <script src="/scripts/image_modal.js"></script>
+      <script src="scripts/slideshow.js"></script>
     </body>
 </html>

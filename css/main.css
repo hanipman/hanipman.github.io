@@ -17,6 +17,47 @@ body {
   padding: 0;
 }
 
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  padding: 30px;
+  height: 100%;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0px;
+}
+
+.prev {
+  left: 0px;
+}
+
+.prev:hover, .next:hover {
+  color: white;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numberText {
+  color: black;
+  left: 5%;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -33,9 +74,13 @@ body {
 }
 
 .modal_content {
+  position: relative;
   max-width: 80%;
+  max-height: auto;
   background-color: #ededed;
   border: 1px solid #888;
+  padding: 0px 50px 0px 50px;
+  overflow: hidden;
 }
 
 .close {
@@ -68,7 +113,7 @@ body {
   align-items: center;
   height: 80px;
   background: #ededed;
-  color: black
+  color: black;
 }
 
 .section:hover {
